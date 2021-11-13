@@ -41,8 +41,8 @@ app.post('/send', (req, res) => {
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-                user: 'shanmukh.iyer@gmail.com', // generated ethereal user
-                pass: 'Shonu!603'    // generated ethereal password
+                user: 'shanmukh.iyer@gmail.com',
+                pass: PASSWD
         },
         tls:{
             rejectUnauthorized:false
@@ -52,7 +52,7 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
             from: '"Nodemailer Contact" <shanmukh.iyer@gmail.com>', // sender address
-            to: 'rudrk3@gmail.com', // list of receivers
+            to: EMAIL, // list of receivers
             subject: 'Node Contact Request', // Subject line
             text: 'Hello world?', // plain text body
             html: output // html body
